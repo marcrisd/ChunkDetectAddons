@@ -1,0 +1,23 @@
+plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
+}
+
+group = 'com.marcus.chunkdetect'
+version = '1.0.0'
+
+repositories {
+    maven { url 'https://maven.fabricmc.net/' }
+    maven { url 'https://maven.terraformersmc.com/releases/' }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.4"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.16.10"
+    modImplementation "meteordevelopment:meteor-client:0.5.0"
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/meteor.accesswidener")
+}
